@@ -71,6 +71,11 @@ var results = {}
             leftLaneETstatus.style.background = "red"
             rightLaneETstatus.style.color = "white"
             leftLaneETstatus.style.color = "white"
+        } else {
+            rightLaneETstatus.style.background = "red"
+            leftLaneETstatus.style.background = "green"
+            rightLaneETstatus.style.color = "white"
+            leftLaneETstatus.style.color = "white"
         }
     })
 
