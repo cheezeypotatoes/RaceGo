@@ -220,7 +220,7 @@ board.on("ready", () => {
       return
 
     } else {  //if no foul start lane
-      // isRaceRunning = true
+      
       console.log(lane + " Will start")
     }
 
@@ -229,7 +229,7 @@ board.on("ready", () => {
         rightLaneTimer()  //start timer for right lane
         raceResults.rightLaneReactionTime = (Date.now() - greenLightOnTime) /1000 //calculate r/t
         console.log(raceResults.rightLaneReactionTime)
-        // webDisplay()
+        
 
 
       } else {
@@ -239,18 +239,18 @@ board.on("ready", () => {
         leftLaneTimer()
         raceResults.leftLaneReactionTime = (Date.now() - greenLightOnTime) /1000 //calculate r/t
         console.log(raceResults.leftLaneReactionTime)
-        // webDisplay()
+        
       }
    }
 
    rightLaneTimer = () => {
-     let rightSideTime = 0
+     let rightLaneStartTime = 0
      rightLaneStartTime = Date.now()
      const seconds = setInterval(() => {
        raceResults.rightLaneElapsedTime = (Date.now() - rightLaneStartTime) / 1000
      }, 10)
 
-     rightLaneFinishLine.on("change", value => {
+     rightLaneFinishLine.on("change", value => {    //when finish line is crossed
        
          clearInterval(seconds)
          rightLaneTripped = true
@@ -261,17 +261,15 @@ board.on("ready", () => {
            greenLight[0].on()
            redLight[1].on()
            raceResults.raceWinner = "Right Lane"
-           // webDisplay()
+           
          } else {
             raceResults.raceWinner = "Left Lane"
             myEmitter.emit('race-complete', raceResults)
-         }
+          }
 
          console.log(raceResults.rightLaneElapsedTime);
-        //  webDisplay()
-         return
-       // }
-     })
+          return
+      })
    }
 
   
@@ -283,7 +281,7 @@ board.on("ready", () => {
        raceResults.leftLaneElapsedTime = (Date.now() - leftLaneStartTime) / 1000
      }, 10)
 
-     leftLaneFinishLine.on("change", value => {
+     leftLaneFinishLine.on("change", value => {    //when finish line is crossed
        
          clearInterval(seconds)
          leftLaneTripped = true
@@ -294,18 +292,14 @@ board.on("ready", () => {
            greenLight[1].on()
            redLight[0].on()
            raceResults.raceWinner = "Left Lane"
-           // webDisplay()
+           
           } else {
-            raceResults.raceWinner = "Right Lane"
-            myEmitter.emit('race-complete', raceResults)
-          }
-            
-         
+              raceResults.raceWinner = "Right Lane"
+              myEmitter.emit('race-complete', raceResults)
+            }
 
-         console.log(raceResults.leftLaneElapsedTime);
-        //  webDisplay()
-         return
-       // }
+           console.log(raceResults.leftLaneElapsedTime);
+            return
      })
    }
 
@@ -332,19 +326,19 @@ board.on("ready", () => {
 
     rightLaneServo.to(180) //close start gate
     leftLaneServo.to(90) //close start gate
-    // webDisplay() //refresh dashboard
+    
     raceReady()
   }
 
   raceReady = () => { //indicate ready for next race
-    // process.stdout.write('\u001B[2J\u001B[0;0f')
-    console.log("Race Ready");
+    
+    console.log("Race Ready")
     firstYellowLight.on()
     secondYellowLight.on()
     greenLight.on()
     redLight.on()
-    // console.log(raceResults.rightLaneElapsedTime);
-    console.log(raceResults.leftLaneElapsedTime);
+    
+    
 
   }
 
@@ -364,10 +358,6 @@ board.on("ready", () => {
   let clients = new Set()
 
 
-
-
-
-
   io.on("connection", socket => {
       if (clients.size < 5) {
       clients.add(socket);
@@ -379,7 +369,7 @@ board.on("ready", () => {
       socket.emit("report" , data)
       clients.forEach(recipient => {
         recipient.emit("report", data)
-    })
+      })
     
     });
 
