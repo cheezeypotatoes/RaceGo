@@ -1,0 +1,148 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
+
+:root {
+    --primary-color: hsla(245, 21%, 78%, 0.725);
+    --secondary-color: rgba(33, 15, 196, 0.781);
+    --dark-color: #120052d7;
+    --light-color: #f4f4f4;
+    
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.reset-btn {
+    background-color: red;
+}
+
+.tree-btn {
+    background-color: green;
+}
+
+.btn-outline {
+    
+    border: 1px hsl(0, 100%, 1%) solid;
+}
+
+.btn:hover {
+    transform: scale(0.98);
+
+}
+
+
+
+/* navbar styling */
+
+
+
+.navbar {
+    background: url("bg.jpg");
+    color: rgb(66, 129, 158);
+    height: 120px;
+    border: 1px black solid;
+    text-align: center;
+    font-size: 24px;
+    
+    
+   
+}
+
+.navbar h1 {
+    font-weight: 500;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    
+}
+
+.navbar a {
+    color:hsl(212, 35%, 49%);
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px #fdfcfc solid;
+}
+
+
+
+/* Showcase Area */
+
+
+.showcase {
+    border: 1px black solid;
+    background: url("bg.jpg");
+
+   
+}
+
+.showcase ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; 
+    margin-bottom: 5px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+}
+
+.status-bar {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+    height: 30px;
+    
+}
+.right-lane-RT {
+    border: 1px black solid;
+    
+}
+
+.left-lane-RT {
+    border: 1px black solid;
+}
+
+.right-lane-ET {
+    border: 1px black solid;
+}
+
+.left-lane-ET {
+    border: 1px black solid;
+}
+

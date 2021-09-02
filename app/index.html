@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node-Sockets-Server</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="">
+            <h1 class="logo">CorkScrew Canyon</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Drag Racing</a></li>
+                    <li><a href="index.html">Qualifying</a></li>
+                    <li><a href="index.html">Other Mode</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div id="right-lane-RT">
+            <h1>0.000</h1>
+            <h2>Right Lane R/T</h2>
+        </div>
+        <div id="left-lane-RT">
+            <h1>0.000</h1>
+            <h2>Left Lane R/T</h2>
+        </div>
+        <div id="right-lane-ET">
+            <h1>0.000</h1>
+            <h2>Right Lane E/T</h2>
+        </div>
+        <div id="left-lane-ET">
+            <h1>0.000</h1>
+            <h2>Left Lane E/T</h2>
+        </div>
+    </div>
+    <div class="status-bar">
+        <div class="right-lane-RT">
+                  
+        </div>
+        <div class="left-lane-RT">
+            
+        </div>
+        <div class="right-lane-ET">
+            
+        </div>
+        <div class="left-lane-ET">
+            
+        </div>
+    </div>
+
+    <section class="showcase">
+       <ul>
+           <li><a href="#" onclick="reset()" class="btn reset-btn btn-outline">Reset</a></li>
+           <li><a href="#" onclick="tree()"class="btn tree-btn btn-outline">Start Tree</a></li>
+       </ul>
+            
+        
+
+    </section>
+    <img src="/stream" alt="" style="width:500px;height:500px;">
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
