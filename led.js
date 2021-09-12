@@ -1,3 +1,5 @@
+//this file was used to calibrate the finish line beams. freq, and threshold can be adjusted to fine tune the beam sensitivity
+
 const {Board, Leds, Servo, Sensor} = require("johnny-five")
 const Tessel = require("tessel-io")
 
