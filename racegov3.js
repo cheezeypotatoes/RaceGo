@@ -60,13 +60,13 @@ board.on("ready", () => {
 
   let rightLaneFinishLine = new Sensor({ //IR receiver for right lane finish line
     pin: "b2",
-    freq: 40,
+    // freq: 40,
     threshold: 500
   })
 
   let leftLaneFinishLine = new Sensor({ //IR receiver for left lane finish line
   pin: "b3",
-  freq: 40,
+  // freq: 40,
   threshold: 500
   })
 
